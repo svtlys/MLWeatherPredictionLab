@@ -1,5 +1,3 @@
-# MLWeatherPrediction
-
 # ML Weather Prediction Data Pipeline
 # Created by Alyssa Gomez and Angela Wei
 
