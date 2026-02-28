@@ -1,0 +1,9 @@
+# Hide credentials
+.env
+
+# Ignore datasets
+data/*.csv
+
+# Python cache
+__pycache__/
+*.pyc
