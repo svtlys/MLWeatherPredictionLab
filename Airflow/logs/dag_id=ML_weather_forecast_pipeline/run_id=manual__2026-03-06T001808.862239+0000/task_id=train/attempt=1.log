@@ -1,0 +1,25 @@
+[2026-03-06T00:18:10.286+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-06T00:18:10.302+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ML_weather_forecast_pipeline.train manual__2026-03-06T00:18:08.862239+00:00 [queued]>
+[2026-03-06T00:18:10.312+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ML_weather_forecast_pipeline.train manual__2026-03-06T00:18:08.862239+00:00 [queued]>
+[2026-03-06T00:18:10.313+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2026-03-06T00:18:10.324+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): train> on 2026-03-06 00:18:08.862239+00:00
+[2026-03-06T00:18:10.333+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2760) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-06T00:18:10.334+0000] {standard_task_runner.py:72} INFO - Started process 2769 to run task
+[2026-03-06T00:18:10.334+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ML_weather_forecast_pipeline', 'train', 'manual__2026-03-06T00:18:08.862239+00:00', '--job-id', '57', '--raw', '--subdir', 'DAGS_FOLDER/ml_forecasting_pipeline_dag.py', '--cfg-path', '/tmp/tmpvmhxokli']
+[2026-03-06T00:18:10.337+0000] {standard_task_runner.py:105} INFO - Job 57: Subtask train
+[2026-03-06T00:18:10.418+0000] {task_command.py:467} INFO - Running <TaskInstance: ML_weather_forecast_pipeline.train manual__2026-03-06T00:18:08.862239+00:00 [running]> on host b2c72943a77e
+[2026-03-06T00:18:10.516+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ML_weather_forecast_pipeline' AIRFLOW_CTX_TASK_ID='train' AIRFLOW_CTX_EXECUTION_DATE='2026-03-06T00:18:08.862239+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-06T00:18:08.862239+00:00'
+[2026-03-06T00:18:10.518+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-03-06T00:18:10.536+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2026-03-06T00:18:10.538+0000] {connection.py:413} INFO - Snowflake Connector for Python Version: 3.12.1, Python Version: 3.12.5, Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-03-06T00:18:10.541+0000] {connection.py:1196} INFO - Connecting to GLOBAL Snowflake domain
+[2026-03-06T00:18:10.542+0000] {connection.py:1277} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-06T00:18:12.087+0000] {cursor.py:1156} INFO - Number of results in first chunk: 1
+[2026-03-06T00:19:15.904+0000] {cursor.py:1156} INFO - Number of results in first chunk: 1
+[2026-03-06T00:19:15.907+0000] {logging_mixin.py:190} INFO - Model model_n_temp for temp_max in Northridge created.
+[2026-03-06T00:19:15.909+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-03-06T00:19:15.938+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-03-06T00:19:15.939+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ML_weather_forecast_pipeline, task_id=train, run_id=manual__2026-03-06T00:18:08.862239+00:00, execution_date=20260306T001808, start_date=20260306T001810, end_date=20260306T001915
+[2026-03-06T00:19:15.972+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-03-06T00:19:15.998+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-03-06T00:19:16.000+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

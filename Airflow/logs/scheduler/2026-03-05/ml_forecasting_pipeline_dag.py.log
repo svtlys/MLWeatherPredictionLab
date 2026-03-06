@@ -1,0 +1,85 @@
+[2026-03-05T23:56:36.432+0000] {processor.py:186} INFO - Started process (PID=1828) to work on /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:56:36.433+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/ml_forecasting_pipeline_dag.py for tasks to queue
+[2026-03-05T23:56:36.436+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:56:36.436+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:56:36.552+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:56:36.552+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2026-03-05T23:56:36.582+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:56:36.581+0000] {connection.py:413} INFO - Snowflake Connector for Python Version: 3.12.1, Python Version: 3.12.5, Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-03-05T23:56:36.621+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:56:36.620+0000] {connection.py:1196} INFO - Connecting to GLOBAL Snowflake domain
+[2026-03-05T23:56:36.624+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:56:36.623+0000] {connection.py:1277} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-05T23:56:38.167+0000] {processor.py:925} INFO - DAG(s) 'ML_Weather_Forecast_Final' retrieved from /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:56:38.450+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:56:38.450+0000] {override.py:1900} INFO - Created Permission View: can edit on DAG:ML_Weather_Forecast_Final
+[2026-03-05T23:56:38.460+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:56:38.460+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG:ML_Weather_Forecast_Final
+[2026-03-05T23:56:38.465+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:56:38.465+0000] {override.py:1900} INFO - Created Permission View: can read on DAG:ML_Weather_Forecast_Final
+[2026-03-05T23:56:38.471+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:56:38.471+0000] {override.py:1900} INFO - Created Permission View: menu access on DAG Run:ML_Weather_Forecast_Final
+[2026-03-05T23:56:38.476+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:56:38.475+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG Run:ML_Weather_Forecast_Final
+[2026-03-05T23:56:38.481+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:56:38.481+0000] {override.py:1900} INFO - Created Permission View: can create on DAG Run:ML_Weather_Forecast_Final
+[2026-03-05T23:56:38.487+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:56:38.487+0000] {override.py:1900} INFO - Created Permission View: can read on DAG Run:ML_Weather_Forecast_Final
+[2026-03-05T23:56:38.488+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:56:38.488+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2026-03-05T23:56:38.509+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:56:38.509+0000] {dag.py:3252} INFO - Creating ORM DAG for ML_Weather_Forecast_Final
+[2026-03-05T23:56:38.527+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:56:38.527+0000] {dag.py:4156} INFO - Setting next_dagrun for ML_Weather_Forecast_Final to 2026-03-04 02:30:00+00:00, run_after=2026-03-05 02:30:00+00:00
+[2026-03-05T23:56:38.552+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/ml_forecasting_pipeline_dag.py took 2.126 seconds
+[2026-03-05T23:57:08.925+0000] {processor.py:186} INFO - Started process (PID=1844) to work on /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:57:08.927+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/ml_forecasting_pipeline_dag.py for tasks to queue
+[2026-03-05T23:57:08.930+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:57:08.929+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:57:08.987+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:57:08.987+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2026-03-05T23:57:08.989+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:57:08.989+0000] {connection.py:413} INFO - Snowflake Connector for Python Version: 3.12.1, Python Version: 3.12.5, Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-03-05T23:57:08.990+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:57:08.990+0000] {connection.py:1196} INFO - Connecting to GLOBAL Snowflake domain
+[2026-03-05T23:57:08.991+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:57:08.991+0000] {connection.py:1277} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-05T23:57:09.723+0000] {processor.py:925} INFO - DAG(s) 'ML_Weather_Forecast_Final' retrieved from /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:57:09.808+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:57:09.807+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2026-03-05T23:57:09.826+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:57:09.825+0000] {dag.py:4156} INFO - Setting next_dagrun for ML_Weather_Forecast_Final to 2026-03-04 02:30:00+00:00, run_after=2026-03-05 02:30:00+00:00
+[2026-03-05T23:57:09.845+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/ml_forecasting_pipeline_dag.py took 0.928 seconds
+[2026-03-05T23:57:41.157+0000] {processor.py:186} INFO - Started process (PID=1892) to work on /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:57:41.180+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/ml_forecasting_pipeline_dag.py for tasks to queue
+[2026-03-05T23:57:41.251+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:57:41.243+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:57:41.799+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:57:41.799+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2026-03-05T23:57:41.817+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:57:41.816+0000] {connection.py:413} INFO - Snowflake Connector for Python Version: 3.12.1, Python Version: 3.12.5, Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-03-05T23:57:41.839+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:57:41.839+0000] {connection.py:1196} INFO - Connecting to GLOBAL Snowflake domain
+[2026-03-05T23:57:41.874+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:57:41.873+0000] {connection.py:1277} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-05T23:57:43.824+0000] {processor.py:925} INFO - DAG(s) 'ML_Weather_Forecast_Final' retrieved from /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:57:43.929+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:57:43.928+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2026-03-05T23:57:44.072+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:57:44.072+0000] {dag.py:4156} INFO - Setting next_dagrun for ML_Weather_Forecast_Final to 2026-03-05 02:30:00+00:00, run_after=2026-03-06 02:30:00+00:00
+[2026-03-05T23:57:44.213+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/ml_forecasting_pipeline_dag.py took 3.174 seconds
+[2026-03-05T23:58:14.640+0000] {processor.py:186} INFO - Started process (PID=1956) to work on /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:58:14.642+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/ml_forecasting_pipeline_dag.py for tasks to queue
+[2026-03-05T23:58:14.647+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:58:14.646+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:58:14.713+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:58:14.712+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2026-03-05T23:58:14.715+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:58:14.715+0000] {connection.py:413} INFO - Snowflake Connector for Python Version: 3.12.1, Python Version: 3.12.5, Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-03-05T23:58:14.716+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:58:14.716+0000] {connection.py:1196} INFO - Connecting to GLOBAL Snowflake domain
+[2026-03-05T23:58:14.717+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:58:14.717+0000] {connection.py:1277} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-05T23:58:15.247+0000] {processor.py:925} INFO - DAG(s) 'ML_Weather_Forecast_Final' retrieved from /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:58:15.525+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:58:15.525+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2026-03-05T23:58:15.552+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:58:15.552+0000] {dag.py:4156} INFO - Setting next_dagrun for ML_Weather_Forecast_Final to 2026-03-05 02:30:00+00:00, run_after=2026-03-06 02:30:00+00:00
+[2026-03-05T23:58:15.587+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/ml_forecasting_pipeline_dag.py took 0.954 seconds
+[2026-03-05T23:58:46.223+0000] {processor.py:186} INFO - Started process (PID=1972) to work on /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:58:46.225+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/ml_forecasting_pipeline_dag.py for tasks to queue
+[2026-03-05T23:58:46.229+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:58:46.228+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:58:46.279+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:58:46.279+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2026-03-05T23:58:46.281+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:58:46.280+0000] {connection.py:413} INFO - Snowflake Connector for Python Version: 3.12.1, Python Version: 3.12.5, Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-03-05T23:58:46.283+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:58:46.283+0000] {connection.py:1196} INFO - Connecting to GLOBAL Snowflake domain
+[2026-03-05T23:58:46.284+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:58:46.283+0000] {connection.py:1277} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-05T23:58:46.969+0000] {processor.py:925} INFO - DAG(s) 'ML_Weather_Forecast_Final' retrieved from /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:58:46.990+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:58:46.989+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2026-03-05T23:58:47.013+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:58:47.013+0000] {dag.py:4156} INFO - Setting next_dagrun for ML_Weather_Forecast_Final to 2026-03-05 02:30:00+00:00, run_after=2026-03-06 02:30:00+00:00
+[2026-03-05T23:58:47.036+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/ml_forecasting_pipeline_dag.py took 0.823 seconds
+[2026-03-05T23:59:17.484+0000] {processor.py:186} INFO - Started process (PID=1988) to work on /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:59:17.486+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/ml_forecasting_pipeline_dag.py for tasks to queue
+[2026-03-05T23:59:17.488+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:59:17.488+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:59:17.527+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:59:17.527+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2026-03-05T23:59:17.528+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:59:17.528+0000] {connection.py:413} INFO - Snowflake Connector for Python Version: 3.12.1, Python Version: 3.12.5, Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-03-05T23:59:17.530+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:59:17.529+0000] {connection.py:1196} INFO - Connecting to GLOBAL Snowflake domain
+[2026-03-05T23:59:17.530+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:59:17.530+0000] {connection.py:1277} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-05T23:59:18.162+0000] {processor.py:925} INFO - DAG(s) 'ML_Weather_Forecast_Final' retrieved from /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:59:18.261+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:59:18.261+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2026-03-05T23:59:18.280+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:59:18.280+0000] {dag.py:4156} INFO - Setting next_dagrun for ML_Weather_Forecast_Final to 2026-03-05 02:30:00+00:00, run_after=2026-03-06 02:30:00+00:00
+[2026-03-05T23:59:18.305+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/ml_forecasting_pipeline_dag.py took 0.827 seconds
+[2026-03-05T23:59:48.748+0000] {processor.py:186} INFO - Started process (PID=2004) to work on /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:59:48.750+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/ml_forecasting_pipeline_dag.py for tasks to queue
+[2026-03-05T23:59:48.752+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:59:48.752+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:59:48.792+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:59:48.792+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2026-03-05T23:59:48.794+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:59:48.794+0000] {connection.py:413} INFO - Snowflake Connector for Python Version: 3.12.1, Python Version: 3.12.5, Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-03-05T23:59:48.796+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:59:48.796+0000] {connection.py:1196} INFO - Connecting to GLOBAL Snowflake domain
+[2026-03-05T23:59:48.797+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:59:48.797+0000] {connection.py:1277} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-05T23:59:49.448+0000] {processor.py:925} INFO - DAG(s) 'ML_Weather_Forecast_Final' retrieved from /opt/airflow/dags/ml_forecasting_pipeline_dag.py
+[2026-03-05T23:59:49.553+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:59:49.552+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2026-03-05T23:59:49.574+0000] {logging_mixin.py:190} INFO - [2026-03-05T23:59:49.574+0000] {dag.py:4156} INFO - Setting next_dagrun for ML_Weather_Forecast_Final to 2026-03-05 02:30:00+00:00, run_after=2026-03-06 02:30:00+00:00
+[2026-03-05T23:59:49.600+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/ml_forecasting_pipeline_dag.py took 0.857 seconds
