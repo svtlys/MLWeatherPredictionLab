@@ -5,7 +5,6 @@ from datetime import datetime
 
 @task
 def train(snowflake_conn_id, train_input_table, train_view, model_name, target_col, city):
-    # Create the connection INSIDE the task
     hook = SnowflakeHook(snowflake_conn_id=snowflake_conn_id)
     con = hook.get_conn()
     cursor = con.cursor()
@@ -43,7 +42,6 @@ def create_final_table(snowflake_conn_id, raw_table):
     con = hook.get_conn()
     cursor = con.cursor()
 
-    # Ensure these table names match exactly what you passed into the predict tasks
     final_sql = f"""CREATE OR REPLACE TABLE FINAL_WEATHER_FORECAST AS
     SELECT da, city, MAX(temp_max) as temp_max, MAX(precipitation) as precipitation, 
            MAX(temp_max_forecast) as temp_max_forecast, MAX(precipitation_forecast) as precipitation_forecast
@@ -80,22 +78,22 @@ with DAG(
     t_n_temp = train(conn_id, raw, 'view_n_temp', 'model_n_temp', 'temp_max', 'Northridge')
     p_n_temp = predict(conn_id, 'model_n_temp', 'max_temp_forecast_n')
     
-    t_n_prep = train(conn_id, raw, 'view_n_prep', 'model_n_prep', 'precipitation', 'Northridge')
-    p_n_prep = predict(conn_id, 'model_n_prep', 'precipitation_forecast_n')
+    t_n_prec = train(conn_id, raw, 'view_n_prep', 'model_n_prep', 'precipitation', 'Northridge')
+    p_n_prec = predict(conn_id, 'model_n_prep', 'precipitation_forecast_n')
 
     # Pasadena Tasks
     t_p_temp = train(conn_id, raw, 'view_p_temp', 'model_p_temp', 'temp_max', 'Pasadena')
     p_p_temp = predict(conn_id, 'model_p_temp', 'max_temp_forecast_p')
     
-    t_p_prep = train(conn_id, raw, 'view_p_prep', 'model_p_prep', 'precipitation', 'Pasadena')
-    p_p_prep = predict(conn_id, 'model_p_prep', 'precipitation_forecast_p')
+    t_p_prec = train(conn_id, raw, 'view_p_prep', 'model_p_prep', 'precipitation', 'Pasadena')
+    p_p_prec = predict(conn_id, 'model_p_prep', 'precipitation_forecast_p')
 
     # Final Union Table
     final_union = create_final_table(conn_id, raw)
 
     t_n_temp >> p_n_temp
-    t_n_prep >> p_n_prep
+    t_n_prec >> p_n_prec
     t_p_temp >> p_p_temp
-    t_p_prep >> p_p_prep
+    t_p_prec >> p_p_prec
 
-    [p_n_temp, p_n_prep, p_p_temp, p_p_prep] >> final_union
+    [p_n_temp, p_n_prec, p_p_temp, p_p_prec] >> final_union
