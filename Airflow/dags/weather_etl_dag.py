@@ -16,8 +16,9 @@ def fetch_weather_data():
         'Pasadena': (34.1478, -118.1445)
     }
 
+    days = int(Variable.get("num_days", default_var=90))
     end_date = datetime.today()
-    start_date = end_date - timedelta(days=90)
+    start_date = end_date - timedelta(days=days)
     
     all_data = []
     for city, coords in cities.items():
@@ -50,7 +51,36 @@ def load_to_snowflake(data_dict):
     weather_df = pd.DataFrame(data_dict)
     hook = SnowflakeHook(snowflake_conn_id='snowflake_conn')
     conn = hook.get_conn()
-    
+    cursor = conn.cursor()
+
+    try:
+        cursor.execute("DELETE FROM WEATHER_DATA_LAB1")
+
+        for _, row in weather_df.iterrows():
+            cursor.execute("""
+                INSERT INTO WEATHER_DATA_LAB1
+                (CITY, DATE, TEMP_MAX, TEMP_MEAN, PRECIPITATION)
+                VALUES (%s, %s, %s, %s, %s)
+            """, (
+                row["city"],
+                row["date"],
+                row["temp_max"],
+                row["temp_mean"],
+                row["precipitation"]
+            ))
+
+        conn.commit()
+
+        print(f"Loaded {len(weather_df)} rows into Snowflake")
+
+    except Exception as e:
+        print(f"Error loading data: {e}")
+        conn.rollback()
+        raise
+
+    finally:
+        cursor.close()
+        conn.close()
     
     print(f"Loading {len(weather_df)} rows to Snowflake")
 
