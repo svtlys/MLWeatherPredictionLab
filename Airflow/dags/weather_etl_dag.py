@@ -2,9 +2,11 @@ from airflow import DAG
 from airflow.models import Variable
 from airflow.decorators import task
 from airflow.providers.snowflake.hooks.snowflake import SnowflakeHook
-from datetime import timedelta
-from datetime import datetime
-import pandas as pd  
+from datetime import timedelta, datetime
+from airflow.operators.python import PythonOperator
+
+import subprocess
+import pandas as pd
 import requests
 
 
@@ -19,7 +21,7 @@ def fetch_weather_data():
     days = int(Variable.get("num_days", default_var=90))
     end_date = datetime.today()
     start_date = end_date - timedelta(days=days)
-    
+
     all_data = []
     for city, coords in cities.items():
         params = {
@@ -32,7 +34,7 @@ def fetch_weather_data():
         }
         response = requests.get(URL, params=params)
         data = response.json()["daily"]
-        
+
         df = pd.DataFrame({
             "date": data["time"],
             "temp_max": data["temperature_2m_max"],
@@ -43,8 +45,8 @@ def fetch_weather_data():
         all_data.append(df)
 
     weather_df = pd.concat(all_data)
-    
     return weather_df.to_dict(orient='records')
+
 
 @task
 def load_to_snowflake(data_dict):
@@ -70,7 +72,6 @@ def load_to_snowflake(data_dict):
             ))
 
         conn.commit()
-
         print(f"Loaded {len(weather_df)} rows into Snowflake")
 
     except Exception as e:
@@ -81,8 +82,15 @@ def load_to_snowflake(data_dict):
     finally:
         cursor.close()
         conn.close()
-    
-    print(f"Loading {len(weather_df)} rows to Snowflake")
+
+
+def run_dbt():
+    subprocess.run(
+        ["/home/airflow/.local/bin/dbt", "run"],
+        cwd="/opt/airflow/dbt/weather_dbt",
+        check=True
+    )
+
 
 with DAG(
     dag_id='weather_to_snowflake_pipeline',
@@ -91,6 +99,13 @@ with DAG(
     schedule='30 2 * * *',
     tags=['ETL']
 ) as dag:
-    
+
     weather_json = fetch_weather_data()
-    load_to_snowflake(weather_json)
+    load_task = load_to_snowflake(weather_json)
+
+    run_dbt_task = PythonOperator(
+        task_id="run_dbt_models",
+        python_callable=run_dbt,
+    )
+
+    load_task >> run_dbt_task

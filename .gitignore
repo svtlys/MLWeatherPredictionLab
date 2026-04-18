@@ -11,3 +11,15 @@ __pycache__/
 logs/
 *.log
 .DS_Store
+
+# Airflow logs
+Airflow/logs/
+airflow/logs/
+
+# dbt build files
+target/
+logs/
+
+# mac files
+.DS_Store
+
